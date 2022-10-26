@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios de Programaci�n en JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Ejercicios de Programaci�n en JavaScript</h1>
+    <script>
+      /* 1) Programa una funci�n que cuente el n�mero de caracteres de una cadena de texto, pe. miFunci�n("Hola Mundo") devolver� 10 */
+
+      /* 2) Programa una funci�n que te devuelva el texto recortado seg�n el n�mero de caracteres indicados, pe. miFunci�n("Hola Mundo", 4) devolver� "Hola" */
+
+      /* 3) Programa una funci�n que dada una String te devuelva un Array de textos separados por cierto caracter, pe.
+      miFuncion('hola que tal', ' ') devolver� ['hola', 'que', 'tal'] */
+
+      /* 4) Programa una funci�n que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolver� Hola Mundo Hola Mundo Hola Mundo */
+
+      /* 5) Programa una funci�n que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolver� "odnuM aloH" */
+
+      /* 6) Programa una funci�n para contar el n�mero de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolver� 2 */
+
+      /* 7) Programa una funci�n que valide si una palabra o frase dada, es un pal�ndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolver� true */
+
+      /* 8) Programa una funci�n que elimine cierto patr�n de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolver�  "1, 2, 3, 4 y 5 */
+
+      /* 9) Programa una funci�n que obtenga un numero aleatorio entre 501 y 600 */
+
+      /* 10) Programa una funci�n que reciba un n�mero y eval�e si es capic�a o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolver� true  */
+
+      /* 11) Programa una funci�n que calcule el factorial de un n�mero (El factorial de un entero positivo n, se define como el producto de todos los n�meros enteros positivos desde 1 hasta n), pe. miFuncion(5) devolver� 120 */
+
+      /* 12) Programa una funci�n que determine si un n�mero es primo (aquel que solo es divisible por s� mismo y 1) o no, pe. miFuncion(7) devolver� true */
+
+      /* 13) Programa una funci�n que determine si un n�mero es par o impar, pe. miFuncion(29) devolver� Impar */
+
+      /* 14) Programa una funci�n para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolver� 32�F */
+
+      /* 15) Programa una funci�n para convertir n�meros de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolver� 4 base 10 */
+
+      const numeroBD = (numero = undefined, base = undefined) => {
+        if (numero === undefined) {
+          return console.error("no hay nada aqui");
+        }
+
+        if (typeof numero !== "number") {
+          return console.error(
+            `el tipo de datos es incorrecto ${typeof numero}`
+          );
+        }
+        if (base === undefined) {
+          return console.error("no hay nada aqui en la base");
+        }
+
+        if (typeof base !== "number") {
+          return console.error(`el tipo de datos es incorrecto ${typeof base}`);
+        }
+
+        return base === 2
+          ? console.log(
+              `el numero ${numero} y la base ${base} = ${parseInt(
+                numero,
+                base
+              )} en base 10`
+            )
+          : base === 10
+          ? console.log(
+              `el numero ${numero} y la base ${base} = ${numero.toString(2)}`
+            )
+          : console.log("la base esta incorrecta");
+      };
+
+      // numeroBD(1000, 2);
+
+      /* 16) Programa una funci�n que devuelva el monto final despu�s de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolver� 800 */
+
+      /* 17) Programa una funci�n que dada una fecha v�lida determine cuantos a�os han pasado hasta el d�a de hoy, pe. miFuncion(new Date(1984,4,23)) devolver� 35 a�os (en 2020) */
+
+      /* 18) Programa una funci�n que dada una cadena de texto cuente el n�mero de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5 */
+
+      /* 19) Programa una funci�n que valide que un texto sea un nombre v�lido, pe. miFuncion("Jonathan MirCha") devolver� verdadero */
+
+      /* 20) Programa una funci�n que valide que un texto sea un email v�lido, pe. miFuncion("jonmircha@gmail.com") devolver� verdadero */
+
+      /* 21) Programa una funci�n que dado un array num�rico devuelve otro array con los n�meros elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolver� [1, 16, 25] */
+
+      /* 22) Programa una funci�n que dado un array devuelva el n�mero mas alto y el m�s bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolver� [99, -60] */
+
+      /* 23) Programa una funci�n que dado un array de n�meros devuelva un objeto con 2 arreglos en el primero almacena los n�meros pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolver� {pares: [2,4,6,8,0], impares: [1,3,5,7,9]} */
+
+      /* 24) Programa una funci�n que dado un arreglo de n�meros devuelva un objeto con dos arreglos, el primero tendr� los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolver� { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }*/
+
+      /* 25) Programa una funci�n que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolver� ["x", 10, 2, "10", true]  */
+
+      /* 26) Programa una funci�n que dado un arreglo de n�meros obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolver� 4.5 */
+
+      /* 27) Programa una clase llamada Pelicula.
+         La clase recibir� un objeto al momento de instanciarse con los siguentes datos: id de la pel�cula en IMDB, titulo, director, a�o de estreno, pa�s o pa�ses de origen, g�neros y calificaci�n en IMBD.
+           - Todos los datos del objeto son obligatorios.
+           - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 7 restantes n�meros.
+           - Valida que el t�tulo no rebase los 100 caracteres.
+           - Valida que el director no rebase los 50 caracteres.
+           - Valida que el a�o de estreno sea un n�mero entero de 4 d�gitos.
+           - Valida que el pa�s o paises sea introducidos en forma de arreglo.
+           - Valida que los g�neros sean introducidos en forma de arreglo.
+           - Valida que los g�neros introducidos esten dentro de los g�neros aceptados*.
+           - Crea un m�todo est�tico que devuelva los g�neros aceptados*.
+           - Valida que la calificaci�n sea un n�mero entre 0 y 10 pudiendo ser decimal de una posici�n.
+           - Crea un m�todo que devuelva toda la ficha t�cnica de la pel�cula.
+           - Apartir de un arreglo con la informaci�n de 3 pel�culas genera 3 instancias de la clase de forma automatizada e imprime la ficha t�cnica de cada pel�cula.
+
+         * G�neros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
+         */
+    </script>
+  </body>
+</html>
