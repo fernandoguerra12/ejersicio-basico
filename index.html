@@ -68,6 +68,43 @@
 
       /* 14) Programa una funci�n para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolver� 32�F */
 
+      const temperatura = (unidad = "", grados = undefined) => {
+        if (!unidad) {
+          return console.error("la unidad no existe");
+        }
+        if (typeof unidad !== "string") {
+          return console.error(
+            `este tipo de dato es incorrecto ${typeof unidad}`
+          );
+        }
+
+        if (grados === undefined) {
+          return console.error("los grados esta vacio");
+        }
+
+        if (typeof grados !== "number") {
+          return console.error(
+            `este tipo de dato es incorrecto ${typeof grados}`
+          );
+        }
+
+        if (unidad.length !== 1 || !/(F|C)/.test(unidad)) {
+          console.error(`solo puede tener una letra que es ("F") o ("C")`);
+        }
+
+        if (unidad === "C") {
+          return console.log(
+            `${grados}°C = ${Math.trunc(grados * (9 / 5) + 32)}°F`
+          );
+        } else if (unidad === "F") {
+          return console.log(
+            `${grados}°F = ${Math.trunc((grados - 32) * (5 / 9))}°C`
+          );
+        }
+      };
+
+      temperatura("F", 67);
+
       /* 15) Programa una funci�n para convertir n�meros de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolver� 4 base 10 */
 
       const numeroBD = (numero = undefined, base = undefined) => {
@@ -170,16 +207,69 @@
         });
       };
 
-      arrayAscDesc();
-      arrayAscDesc(34);
-      arrayAscDesc([]);
-      arrayAscDesc([45]);
-      arrayAscDesc([45, 4, 90, "hola"]);
-      arrayAscDesc([7, 5, 7, 8, 6]);
+      // arrayAscDesc();
+      // arrayAscDesc(34);
+      // arrayAscDesc([]);
+      // arrayAscDesc([45]);
+      // arrayAscDesc([45, 4, 90, "hola"]);
+      // arrayAscDesc([7, 5, 7, 8, 6]);
 
       /* 25) Programa una funci�n que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolver� ["x", 10, 2, "10", true]  */
 
       /* 26) Programa una funci�n que dado un arreglo de n�meros obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolver� 4.5 */
+
+      const arrayPromedio = (arr = undefined) => {
+        if (arr === undefined) {
+          return console.error(`el arary esta vacio`);
+        }
+
+        if (!(arr instanceof Array)) {
+          return console.error(
+            "el tipo de datos es incorrecto" +
+              " " +
+              typeof arr +
+              " " +
+              "no es una array"
+          );
+        }
+
+        if (arr.length === 0) {
+          return console.error("el array no tiene elemento" + " " + arr);
+        }
+        if (arr.length === 1) {
+          return console.error(
+            "el array debe tener mas de un elemento para este ejersicio" +
+              " " +
+              arr
+          );
+        }
+
+        for (let num of arr) {
+          if (typeof num !== "number") {
+            return console.error(
+              "el tipo de datos es incorrecto" +
+                " " +
+                num +
+                " " +
+                "no es una numero"
+            );
+          }
+        }
+
+        console.log({
+          arrayOriginal: arr,
+          arrayPromedio: arr.reduce((total, num, index, arr) => {
+            total = total + num;
+            if (index === arr.length - 1) {
+              return `${arr.join(" + ")} = ${total / arr.length}`;
+            } else {
+              return total;
+            }
+          }),
+        });
+      };
+
+      arrayPromedio([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
 
       /* 27) Programa una clase llamada Pelicula.
          La clase recibir� un objeto al momento de instanciarse con los siguentes datos: id de la pel�cula en IMDB, titulo, director, a�o de estreno, pa�s o pa�ses de origen, g�neros y calificaci�n en IMBD.
