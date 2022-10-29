@@ -52,6 +52,36 @@
 
       /* 8) Programa una funci�n que elimine cierto patr�n de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolver�  "1, 2, 3, 4 y 5 */
 
+      const eliminarPatron = (cadena = "", patro = "") => {
+        if (!cadena) {
+          return console.error("no hay patron");
+        }
+
+        if (typeof cadena !== "string") {
+          return console.error(
+            "el tipo de dato es incorrecto" + " " + typeof patro
+          );
+        }
+        if (!patro) {
+          return console.error("no hay patron");
+        }
+
+        if (typeof patro !== "string") {
+          return console.error(
+            "el tipo de dato es incorrecto" + " " + typeof patro
+          );
+        }
+
+        return console.log(
+          `la cadena que introdujo ${cadena} y  el patron aliminar ${patro} = ${cadena.replace(
+            new RegExp(patro, "ig"),
+            " "
+          )}`
+        );
+      };
+
+      // eliminarPatron("xyz1, xyz2, xyz3, xyz4, xyz5", "xyz");
+
       /* 9) Programa una funci�n que obtenga un numero aleatorio entre 501 y 600 */
 
       const numeroAleatorio = () =>
@@ -103,7 +133,7 @@
         }
       };
 
-      temperatura("F", 67);
+      // temperatura("F", 67);
 
       /* 15) Programa una funci�n para convertir n�meros de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolver� 4 base 10 */
 
@@ -148,6 +178,29 @@
       /* 18) Programa una funci�n que dada una cadena de texto cuente el n�mero de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5 */
 
       /* 19) Programa una funci�n que valide que un texto sea un nombre v�lido, pe. miFuncion("Jonathan MirCha") devolver� verdadero */
+
+      const validarNombre = (cadena = "") => {
+        if (!cadena) {
+          return console.error("no hay patron");
+        }
+
+        if (typeof cadena !== "string") {
+          return console.error(
+            "el tipo de dato es incorrecto" + " " + typeof patro
+          );
+        }
+
+        let RegExp =
+          /^[BCDFGHJKLMNÑPQRSTVWXYZbcdfghjklmnñpqrstvwxyxÁÉÍÓÚáéíóú\s]$/gi.test(
+            cadena
+          );
+
+        return RegExp
+          ? console.log(`el nombre que escribio es valido ${cadena}`)
+          : console.log(`el nombre que escribio no es valido ${cadena}`);
+      };
+
+      // validarNombre("fernando guerra34");
 
       /* 20) Programa una funci�n que valide que un texto sea un email v�lido, pe. miFuncion("jonmircha@gmail.com") devolver� verdadero */
 
@@ -269,7 +322,7 @@
         });
       };
 
-      arrayPromedio([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
+      // arrayPromedio([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
 
       /* 27) Programa una clase llamada Pelicula.
          La clase recibir� un objeto al momento de instanciarse con los siguentes datos: id de la pel�cula en IMDB, titulo, director, a�o de estreno, pa�s o pa�ses de origen, g�neros y calificaci�n en IMBD.
