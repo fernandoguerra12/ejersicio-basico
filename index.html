@@ -94,6 +94,33 @@
 
       /* 12) Programa una funci�n que determine si un n�mero es primo (aquel que solo es divisible por s� mismo y 1) o no, pe. miFuncion(7) devolver� true */
 
+      const numeroPrimo = (numero = undefined) => {
+        if (numero === undefined) {
+          return console.error(`introdusca numero por favor`);
+        }
+
+        if (typeof numero !== "number") {
+          return console.error(
+            `este tipo de dato es incorrecto ${typeof numero}`
+          );
+        }
+
+        let divisible = true;
+
+        for (let i = 2; i < numero; i++) {
+          if (numero % i === 0) {
+            divisible = false;
+            break;
+          }
+        }
+
+        return divisible
+          ? console.log(`el numero es primo ${numero}`)
+          : console.log(`el numero no es primo ${numero}`);
+      };
+
+      numeroPrimo(89);
+
       /* 13) Programa una funci�n que determine si un n�mero es par o impar, pe. miFuncion(29) devolver� Impar */
 
       /* 14) Programa una funci�n para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolver� 32�F */
@@ -268,6 +295,42 @@
       // arrayAscDesc([7, 5, 7, 8, 6]);
 
       /* 25) Programa una funci�n que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolver� ["x", 10, 2, "10", true]  */
+      const arrayEliminarDuplicado = (arr = undefined) => {
+        if (arr === undefined) {
+          return console.error(`el arary esta vacio`);
+        }
+
+        if (!(arr instanceof Array)) {
+          return console.error(
+            "el tipo de datos es incorrecto" +
+              " " +
+              typeof arr +
+              " " +
+              "no es una array"
+          );
+        }
+
+        if (arr.length === 0) {
+          return console.error("el array no tiene elemento" + " " + arr);
+        }
+        if (arr.length === 1) {
+          return console.error(
+            "el array debe tener mas de un elemento para este ejersicio" +
+              " " +
+              arr
+          );
+        }
+
+        console.log({
+          arrayOriginal: arr,
+          // arrayDletaDuplicado: arr.filter(
+          //   (el, index, self) => self.indexOf(el) === index
+          // ),
+          arrayDletaDuplicado: [...new Set(arr)],
+        });
+      };
+
+      // arrayEliminarDuplicado(["x", 10, "x", 2, "10", 10, true, true]);
 
       /* 26) Programa una funci�n que dado un arreglo de n�meros obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolver� 4.5 */
 
