@@ -92,6 +92,28 @@
 
       /* 11) Programa una funci�n que calcule el factorial de un n�mero (El factorial de un entero positivo n, se define como el producto de todos los n�meros enteros positivos desde 1 hasta n), pe. miFuncion(5) devolver� 120 */
 
+      const Factirial = (numero = undefined) => {
+        if (numero === undefined) {
+          return console.error(`introdusca numero por favor`);
+        }
+
+        if (typeof numero !== "number") {
+          return console.error(
+            `este tipo de dato es incorrecto ${typeof numero}`
+          );
+        }
+
+        let factorial = 1;
+
+        for (let i = 1; i <= numero; i++) {
+          factorial = factorial * i;
+        }
+
+        return console.log(`el factorial de ${numero} = ${factorial}`);
+      };
+
+      Factirial(5);
+
       /* 12) Programa una funci�n que determine si un n�mero es primo (aquel que solo es divisible por s� mismo y 1) o no, pe. miFuncion(7) devolver� true */
 
       const numeroPrimo = (numero = undefined) => {
@@ -119,7 +141,7 @@
           : console.log(`el numero no es primo ${numero}`);
       };
 
-      numeroPrimo(89);
+      // numeroPrimo(89);
 
       /* 13) Programa una funci�n que determine si un n�mero es par o impar, pe. miFuncion(29) devolver� Impar */
 
@@ -236,6 +258,51 @@
       /* 22) Programa una funci�n que dado un array devuelva el n�mero mas alto y el m�s bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolver� [99, -60] */
 
       /* 23) Programa una funci�n que dado un array de n�meros devuelva un objeto con 2 arreglos en el primero almacena los n�meros pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolver� {pares: [2,4,6,8,0], impares: [1,3,5,7,9]} */
+      const arrayParImpar = (arr = undefined) => {
+        if (arr === undefined) {
+          return console.error(`el arary esta vacio`);
+        }
+
+        if (!(arr instanceof Array)) {
+          return console.error(
+            "el tipo de datos es incorrecto" +
+              " " +
+              typeof arr +
+              " " +
+              "no es una array"
+          );
+        }
+
+        if (arr.length === 0) {
+          return console.error("el array no tiene elemento" + " " + arr);
+        }
+        if (arr.length === 1) {
+          return console.error(
+            "el array debe tener mas de un elemento para este ejersicio" +
+              " " +
+              arr
+          );
+        }
+
+        for (let num of arr) {
+          if (typeof num !== "number") {
+            return console.error(
+              "el tipo de datos es incorrecto" +
+                " " +
+                num +
+                " " +
+                "no es una numero"
+            );
+          }
+        }
+
+        console.log({
+          arrayOriginal: arr,
+          arrayPar: arr.filter((el) => el % 2 === 0),
+          arrayImapr: arr.filter((el) => el % 2 === 1),
+        });
+      };
+      arrayParImpar([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
 
       /* 24) Programa una funci�n que dado un arreglo de n�meros devuelva un objeto con dos arreglos, el primero tendr� los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolver� { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }*/
 
