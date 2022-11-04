@@ -8,7 +8,7 @@ en esto momento estoy resolviendo algunos problema basico en javascrit para pode
 
 **Se seguira agragando atualisaciones de proyecto**
 
-##Esto es un de los ejersico que he resuelto
+##Esto es un de los ejersico que he resuelto..
 ...
  /* 7) Programa una funci�n que valide si una palabra o frase dada, es un pal�ndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolver� true */
 
