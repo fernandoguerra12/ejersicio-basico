@@ -1,8 +1,8 @@
 # Ejersicio de programacion en javascript
 
-en esto momento estoy resolviendo algunos problema basico en javascrit para poder entender la logica de programacion es  muy basico esto consepto de programacion .
+en esto momento estoy resolviendo algunos problema basico en javascrit para poder entender la logica de programacion es muy basico esto consepto de programacion .
 
-- Analizar el problema 
+- Analizar el problema
 - escribir el codogo
 - test del codigo que corra bn
 
@@ -10,7 +10,7 @@ en esto momento estoy resolviendo algunos problema basico en javascrit para pode
 
 ##Esto es un de los ejersico que he resuelto..
 ...
- /* 7) Programa una funci�n que valide si una palabra o frase dada, es un pal�ndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolver� true */
+/_ 7) Programa una funci�n que valide si una palabra o frase dada, es un pal�ndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolver� true _/
 
       const palindromo = (palabra = "") => {
         if (!palabra) {
@@ -40,7 +40,6 @@ en esto momento estoy resolviendo algunos problema basico en javascrit para pode
 
 ...
 
-## Soy un persona apreder js en 2022
+## resolviendo problema el day hoy 5/11/2022
 
-:tw-1f60e:
-
+en esto momento estoy resolviendo el el problema 17 y el numero 21

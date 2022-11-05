@@ -252,6 +252,35 @@
       montoFinal(1000, 20);
 
       /* 17) Programa una funci�n que dada una fecha v�lida determine cuantos a�os han pasado hasta el d�a de hoy, pe. miFuncion(new Date(1984,4,23)) devolver� 35 a�os (en 2020) */
+      const validarFecha = (fecha = undefined) => {
+        if (fecha === undefined) {
+          return console.error("no hay fecha");
+        }
+
+        if (!(fecha instanceof Date)) {
+          return console.error(
+            `el dato que intrudujo no es invalido por que? es ${typeof fecha}`
+          );
+        }
+
+        let fechaNumerica = new Date().getTime() - fecha.getTime();
+        let fechaAno = 1000 * 60 * 60 * 24 * 365;
+        let fechaAtual = Math.floor(fechaNumerica / fechaAno);
+
+        return Math.sign(fechaAtual) === -1
+          ? console.log(
+              `Falta ${Math.abs(
+                fechaAtual
+              )} años para el ${fecha.getFullYear()}`
+            )
+          : Math.sign(fechaAtual) === 1
+          ? console.log(
+              `Ha pasado ${Math.abs(
+                fechaAtual
+              )} años desde ${fecha.getFullYear()}`
+            )
+          : console.log(`Estamos en el años atual`);
+      };
 
       /* 18) Programa una funci�n que dada una cadena de texto cuente el n�mero de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5 */
 
@@ -283,6 +312,52 @@
       /* 20) Programa una funci�n que valide que un texto sea un email v�lido, pe. miFuncion("jonmircha@gmail.com") devolver� verdadero */
 
       /* 21) Programa una funci�n que dado un array num�rico devuelve otro array con los n�meros elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolver� [1, 16, 25] */
+
+      const arrayElevado = (arr = undefined) => {
+        if (arr === undefined) {
+          return console.error(`el arary esta vacio`);
+        }
+
+        if (!(arr instanceof Array)) {
+          return console.error(
+            "el tipo de datos es incorrecto" +
+              " " +
+              typeof arr +
+              " " +
+              "no es una array"
+          );
+        }
+
+        if (arr.length === 0) {
+          return console.error("el array no tiene elemento" + " " + arr);
+        }
+        if (arr.length === 1) {
+          return console.error(
+            "el array debe tener mas de un elemento para este ejersicio" +
+              " " +
+              arr
+          );
+        }
+
+        for (let num of arr) {
+          if (typeof num !== "number") {
+            return console.error(
+              "el tipo de datos es incorrecto" +
+                " " +
+                num +
+                " " +
+                "no es una numero"
+            );
+          }
+        }
+
+        console.log({
+          arrayOriginal: arr,
+          arrayElevado: arr.map((el) => el * el),
+        });
+      };
+
+      // arrayElevado([1, 4, 5]);
 
       /* 22) Programa una funci�n que dado un array devuelva el n�mero mas alto y el m�s bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolver� [99, -60] */
       const arrayMaxMin = (arr = undefined) => {
