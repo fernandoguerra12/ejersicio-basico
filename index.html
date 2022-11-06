@@ -145,6 +145,23 @@
 
       /* 13) Programa una funci�n que determine si un n�mero es par o impar, pe. miFuncion(29) devolver� Impar */
 
+      const numeroParImpar = (numero = undefined) => {
+        if (numero === undefined) {
+          return console.error(`introdusca numero por favor`);
+        }
+
+        if (typeof numero !== "number") {
+          return console.error(
+            `este tipo de dato es incorrecto ${typeof numero}`
+          );
+        }
+
+        return numero % 2 === 0
+          ? console.log(`el numero es par ${numero}`)
+          : console.log(`el numero es Impar ${numero}`);
+      };
+      // numeroParImpar(46);
+
       /* 14) Programa una funci�n para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolver� 32�F */
 
       const temperatura = (unidad = "", grados = undefined) => {
@@ -249,7 +266,7 @@
         );
       };
 
-      montoFinal(1000, 20);
+      // montoFinal(1000, 20);
 
       /* 17) Programa una funci�n que dada una fecha v�lida determine cuantos a�os han pasado hasta el d�a de hoy, pe. miFuncion(new Date(1984,4,23)) devolver� 35 a�os (en 2020) */
       const validarFecha = (fecha = undefined) => {
@@ -310,7 +327,32 @@
       // validarNombre("fernando guerra34");
 
       /* 20) Programa una funci�n que valide que un texto sea un email v�lido, pe. miFuncion("jonmircha@gmail.com") devolver� verdadero */
+      const validarEmai = (cadena = "") => {
+        if (!cadena) {
+          return console.error("no hay patron");
+        }
 
+        if (typeof cadena !== "string") {
+          return console.error(
+            "el tipo de dato es incorrecto" + " " + typeof patro
+          );
+        }
+
+        let RegExp =
+          /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/gi.test(
+            cadena
+          );
+
+        return RegExp
+          ? console.log(
+              `el correo electronico  que escribio es valido ${cadena}`
+            )
+          : console.log(
+              `el correo electronico  que escribio no es valido ${cadena}`
+            );
+      };
+
+      validarEmai("fernandoduvan12@@gmail.com");
       /* 21) Programa una funci�n que dado un array num�rico devuelve otro array con los n�meros elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolver� [1, 16, 25] */
 
       const arrayElevado = (arr = undefined) => {
