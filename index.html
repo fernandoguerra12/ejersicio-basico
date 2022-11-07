@@ -90,6 +90,28 @@
       // numeroAleatorio();
       /* 10) Programa una funci�n que reciba un n�mero y eval�e si es capic�a o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolver� true  */
 
+      const capicua = (numero = undefined) => {
+        if (numero === undefined) {
+          return console.error(`introdusca numero por favor`);
+        }
+
+        if (typeof numero !== "number") {
+          return console.error(
+            `este tipo de dato es incorrecto ${typeof numero}`
+          );
+        }
+
+        numero = numero.toString();
+
+        let newNamber = numero.split("").reverse().join("");
+
+        return numero === newNamber
+          ? console.log(`el numero es capicua ${numero}`)
+          : console.log(`el numero no es capicua ${numero}`);
+      };
+
+      capicua(2001);
+
       /* 11) Programa una funci�n que calcule el factorial de un n�mero (El factorial de un entero positivo n, se define como el producto de todos los n�meros enteros positivos desde 1 hasta n), pe. miFuncion(5) devolver� 120 */
 
       const Factirial = (numero = undefined) => {
@@ -301,6 +323,46 @@
 
       /* 18) Programa una funci�n que dada una cadena de texto cuente el n�mero de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5 */
 
+      const contarVocalesConsonate = (cadena = "") => {
+        if (!cadena) {
+          return console.error("no hay patron");
+        }
+
+        if (typeof cadena !== "string") {
+          return console.error(
+            "el tipo de dato es incorrecto" + " " + typeof patro
+          );
+        }
+
+        let vocales = 0;
+        let consonantes = 0;
+
+        for (let letra of cadena) {
+          if (/[AEIOUÁÉÍÓÚaeiouáéíóú]/gi.test(letra)) {
+            vocales++;
+          }
+
+          if (/[BCDFGHJKLMNÑPQRSTVWXYZbcdfghjklmnñpqrstvwxyx]/gi.test(letra)) {
+            consonantes++;
+          }
+        }
+
+        return console.log(
+          `el numero de vacales que tiene esta cadena es de ${vocales} y el numero de consonates es de ${consonantes}`
+        );
+
+        // let RegExp =
+        //   /^[BCDFGHJKLMNÑPQRSTVWXYZbcdfghjklmnñpqrstvwxyxÁÉÍÓÚáéíóú\s]$/gi.test(
+        //     cadena
+        //   );
+
+        // return RegExp
+        //   ? console.log(`el nombre que escribio es valido ${cadena}`)
+        //   : console.log(`el nombre que escribio no es valido ${cadena}`);
+      };
+
+      // contarVocalesConsonate("Hola Mundo");
+
       /* 19) Programa una funci�n que valide que un texto sea un nombre v�lido, pe. miFuncion("Jonathan MirCha") devolver� verdadero */
 
       const validarNombre = (cadena = "") => {
@@ -352,7 +414,7 @@
             );
       };
 
-      validarEmai("fernandoduvan12@@gmail.com");
+      // validarEmai("fernandoduvan12@@gmail.com");
       /* 21) Programa una funci�n que dado un array num�rico devuelve otro array con los n�meros elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolver� [1, 16, 25] */
 
       const arrayElevado = (arr = undefined) => {
