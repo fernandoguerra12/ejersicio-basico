@@ -11,6 +11,29 @@
     <script>
       /* 1) Programa una funci�n que cuente el n�mero de caracteres de una cadena de texto, pe. miFunci�n("Hola Mundo") devolver� 10 */
 
+      const contarCaracteres = (palabra = "", texto = "") => {
+        if (!palabra) {
+          return console.error("no ha introducido la palabra");
+        }
+
+        if (typeof palabra !== "string") {
+          return console.error(
+            "el tipo de dato es incorrecto" + " " + typeof palabra
+          );
+        }
+
+        return console.log(
+          "la palabra que escribio es" +
+            " " +
+            palabra +
+            " el numero de caracteres es de" +
+            " " +
+            palabra.length
+        );
+      };
+
+      contarCaracteres("hola mundo");
+
       /* 2) Programa una funci�n que te devuelva el texto recortado seg�n el n�mero de caracteres indicados, pe. miFunci�n("Hola Mundo", 4) devolver� "Hola" */
 
       /* 3) Programa una funci�n que dada una String te devuelva un Array de textos separados por cierto caracter, pe.
@@ -21,6 +44,45 @@
       /* 5) Programa una funci�n que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolver� "odnuM aloH" */
 
       /* 6) Programa una funci�n para contar el n�mero de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolver� 2 */
+
+      const encontrarPalabra = (palabra = "", texto = "") => {
+        if (!palabra) {
+          return console.error("no ha introducido la palabra");
+        }
+
+        if (typeof palabra !== "string") {
+          return console.error(
+            "el tipo de dato es incorrecto" + " " + typeof palabra
+          );
+        }
+        if (!texto) {
+          return console.error("no ha introducido la palabra");
+        }
+
+        if (typeof texto !== "string") {
+          return console.error(
+            "el tipo de dato es incorrecto" + " " + typeof texto
+          );
+        }
+
+        let i = 0;
+        let contador = 0;
+
+        while (i != -1) {
+          i = palabra.indexOf(texto, i);
+
+          if (i != -1) {
+            i++;
+            contador++;
+          }
+        }
+
+        return console.log(
+          `la frase que escribio ${palabra} y el texto a buscar ${texto} y el numero de vace que parece escrito es de ${contador}`
+        );
+      };
+
+      // encontrarPalabra("hola mundo adios mundo", "mundo");
 
       /* 7) Programa una funci�n que valide si una palabra o frase dada, es un pal�ndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolver� true */
 
@@ -110,7 +172,7 @@
           : console.log(`el numero no es capicua ${numero}`);
       };
 
-      capicua(2001);
+      // capicua(2001);
 
       /* 11) Programa una funci�n que calcule el factorial de un n�mero (El factorial de un entero positivo n, se define como el producto de todos los n�meros enteros positivos desde 1 hasta n), pe. miFuncion(5) devolver� 120 */
 
