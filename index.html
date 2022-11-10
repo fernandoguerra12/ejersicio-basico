@@ -69,7 +69,53 @@
       /* 3) Programa una funci�n que dada una String te devuelva un Array de textos separados por cierto caracter, pe.
       miFuncion('hola que tal', ' ') devolver� ['hola', 'que', 'tal'] */
 
+      const textoParado = (palabra = "", separados) => {
+        if (!palabra) {
+          return console.error("no ha introducido la palabra");
+        }
+
+        if (typeof palabra !== "string") {
+          return console.error(
+            "el tipo de dato es incorrecto" + " " + typeof palabra
+          );
+        }
+
+        return console.log(palabra.split(separados));
+      };
+
+      // textoParado("hola mundo que hace", " ");
+
       /* 4) Programa una funci�n que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolver� Hola Mundo Hola Mundo Hola Mundo */
+
+      const textoXVece = (palabra = "", num = undefined) => {
+        if (!palabra) {
+          return console.error("no ha introducido la palabra");
+        }
+
+        if (typeof palabra !== "string") {
+          return console.error(
+            "el tipo de dato es incorrecto" + " " + typeof palabra
+          );
+        }
+
+        if (num === undefined) {
+          return console.error("no ha introducido la palabra");
+        }
+
+        if (typeof num !== "number") {
+          return console.error(
+            "el tipo de dato es incorrecto" + " " + typeof num
+          );
+        }
+
+        setTimeout(() => {
+          for (let i = 1; i <= num; i++) {
+            console.log(palabra + i);
+          }
+        }, 3000);
+      };
+
+      textoXVece("hola mundo ", 3);
 
       /* 5) Programa una funci�n que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolver� "odnuM aloH" */
       const palabraInvertidad = (palabra = "") => {
@@ -90,7 +136,7 @@
         );
       };
 
-      palabraInvertidad("Hola Mundo");
+      // palabraInvertidad("Hola Mundo");
 
       /* 6) Programa una funci�n para contar el n�mero de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolver� 2 */
 
